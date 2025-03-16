@@ -7,15 +7,13 @@ class UserClass extends React.Component {
       userInfo: {
         name: "Dummy name",
         location: "default location",
-        avatar_url: "dummy photo",
+        avatar_url:
+          "https://www.vhv.rs/dpng/d/15-155087_dummy-image-of-user-hd-png-download.png",
       },
     };
-    // console.log(this.props.name + "Child Constructor");
   }
 
   async componentDidMount() {
-    // console.log(this.props.name + "Child componentDidMount");
-
     const data = await fetch("https://api.github.com/users/GeekNoob04");
     const json = await data.json();
     this.setState({
@@ -30,7 +28,6 @@ class UserClass extends React.Component {
     console.log("component Will Unmount");
   }
   render() {
-    // console.log(this.props.name + "Child Render");
     const { name, id, avatar_url } = this.state.userInfo;
 
     return (

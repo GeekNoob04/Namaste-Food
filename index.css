@@ -42,9 +42,11 @@
 }
 
 .res-container {
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  padding: 4px;
+  padding: 9px;
   margin: 4px;
 }
 
