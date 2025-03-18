@@ -27,7 +27,7 @@ const Body2 = () => {
       );
 
       const json = await data.json();
-      // console.log("API Response:", json);
+      console.log("API Response:", json);
 
       let restaurants =
         json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
@@ -78,6 +78,9 @@ const Body2 = () => {
           </h1>
           <p className="mt-6 text-lg font-medium text-gray-500 sm:text-xl">
             Please check your network and try again.
+          </p>
+          <p className="mt-6 text-md font-medium text-gray-500 sm:text-md">
+            (Make Sure CORS Extension Is Activated)
           </p>
         </div>
       </main>
