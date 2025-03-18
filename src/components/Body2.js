@@ -13,7 +13,7 @@ const Body2 = () => {
 
   const ResCardWithDiscount = withDiscountInfo(ResCard);
 
-  console.log("Body Rendered", filteredRes);
+  // console.log("Body Rendered", filteredRes);
 
   useEffect(() => {
     fetchData();
@@ -27,7 +27,7 @@ const Body2 = () => {
       );
 
       const json = await data.json();
-      console.log("API Response:", json);
+      // console.log("API Response:", json);
 
       let restaurants =
         json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
@@ -48,7 +48,7 @@ const Body2 = () => {
         }
       }
 
-      console.log("Restaurants found:", restaurants);
+      // console.log("Restaurants found:", restaurants);
 
       if (restaurants && restaurants.length > 0) {
         setResData(restaurants);
@@ -140,7 +140,7 @@ const Body2 = () => {
           className="bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-700 transition"
           onClick={() => {
             const filtered = resData.filter(
-              (res) => parseFloat(res.info.avgRatingString) > 4.2
+              (res) => parseFloat(res.info.avgRatingString) > 4.3
             );
             setFilteredRes(filtered);
           }}

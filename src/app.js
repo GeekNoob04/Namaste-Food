@@ -3,16 +3,20 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body2 from "./components/Body2";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
-import Contact from "./components/Contact";
 import Error from "./components/Error";
 import ResMenu from "./components/ResMenu";
 import Shimmer from "./components/Shimmer";
+import ContactShimmer from "./components/ContactShimmer";
+// import { useState } from "react";
 
 // lazy loading
 const Grocery = lazy(() => import("./components/Grocery"));
 const About = lazy(() => import("./components/About"));
+const Contact = lazy(() => import("./components/Contact"));
 
 const Applayout = () => {
+  // auth
+  // const [userInfo, setUserInfo] = useState();
   return (
     <div className="app">
       <Header />
@@ -42,7 +46,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: (
+          <Suspense fallback={<ContactShimmer />}>
+            <Contact />
+          </Suspense>
+        ),
       },
       {
         path: "/grocery",
@@ -59,18 +67,6 @@ const appRouter = createBrowserRouter([
     ],
     errorElement: <Error />,
   },
-  // {
-  //   path: "/about",
-  //   element: <About />,
-  // },
-  // {
-  //   path: "/contact",
-  //   element: <Contact />,
-  // },
-  // {
-  //   path: "/restaurants/:resId",
-  //   element: <ResMenu />,
-  // },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

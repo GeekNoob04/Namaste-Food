@@ -1,41 +1,4 @@
-// import User from "./User";
-// import UserClass from "./UserClass";
-// const About = () => {
-//   return (
-//     <div>
-//       <h1>About</h1>
-//       <h2>Welcome to Namaste React</h2>
-//       {/* <User name={"Harshit prop"}/> */}
-//       <UserClass name={"Harshit prop class"} />
-//     </div>
-//   );
-// };
-// export default About;
-
-// import React from "react";
-// import UserClass from "./UserClass";
-
-// class About extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-//   componentDidMount() {
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <h1>About Class Component</h1>
-//         <h2>Welcome to Namaste React</h2>
-//         {/* <User name={"Harshit prop"}/> */}
-//         <UserClass name={"Harshit prop class"} />
-//       </div>
-//     );
-//   }
-// }
-// export default About;
-
 import React from "react";
-import User from "./User";
 import UserClass from "./UserClass";
 
 class About extends React.Component {
@@ -51,7 +14,7 @@ class About extends React.Component {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-extrabold tracking-tight mb-3 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-600">
-              About Class Component
+              About Me
             </h1>
 
             <h2 className="text-xl text-gray-600 font-medium">

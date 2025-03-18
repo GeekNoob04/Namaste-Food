@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import useResMenu from "../util/useResMenu";
 import { CDN_URL } from "../util/constants";
 import ResMenuShimmer from "./ResMenuShimmer";
-import ResCategory from "./ResCategory"; // Import the separated component
+import ResCategory from "./ResCategory";
 
 const ResMenu = () => {
   const { resId } = useParams();

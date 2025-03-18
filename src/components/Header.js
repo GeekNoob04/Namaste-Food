@@ -1,70 +1,14 @@
-// import piggyImage from "/src/util/piggy.png";
-// import { useState } from "react";
-// import { Link } from "react-router";
-// import useOnlineStatus from "../util/useOnlineStatus";
-// const Header = () => {
-//   const [btnNameReact, setbtnNameReact] = useState("Login");
-
-//   const onlineStatus = useOnlineStatus();
-
-//   return (
-//     <div
-//       className="flex justify-between bg-pink-200 shadow-lg
-// "
-//     >
-//       <div className="logo-container">
-//         <img className="w-50" src={piggyImage} alt="Logo" />
-//       </div>
-//       <div className="flex items-center">
-//         <ul className="flex p-4 m-4 ">
-//           <li className="px-4">Online Status {onlineStatus ? "✅" : "❌"} </li>
-//           <li className="px-4">
-//             <Link to={"/"}>Home</Link>
-//           </li>
-//           <li className="px-4">
-//             <Link to={"/About"}>About Us</Link>
-//           </li>
-//           <li className="px-4">
-//             {" "}
-//             <Link to={"/Contact"}> Contact Us </Link>
-//           </li>
-//           <li className="px-4">
-//             {" "}
-//             <Link to={"/grocery"}> Grocery </Link>
-//           </li>
-//           <li className="px-4">
-//             {/* <img
-//               className="cartimg"
-//               src="https://www.reshot.com/preview-assets/icons/QZY7FE92BM/shopping-cart-QZY7FE92BM.svg"
-//               alt="Cart"
-//             /> */}
-//             Cart
-//           </li>
-//           <button
-//             className="px-4"
-//             onClick={() => {
-//               btnNameReact === "Login"
-//                 ? setbtnNameReact("Logout")
-//                 : setbtnNameReact("Login");
-//             }}
-//           >
-//             {btnNameReact}
-//           </button>
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Header;
 import piggyImage from "/src/util/piggy.png";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router";
 import useOnlineStatus from "../util/useOnlineStatus";
+import UserContext from "../util/UserContext";
 
 const Header = () => {
   const [btnNameReact, setbtnNameReact] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  const { loggedInUser } = useContext(UserContext);
+  console.log(loggedInUser);
 
   return (
     <div className="bg-gradient-to-r from-orange-400 to-orange-300 shadow-lg sticky top-0 z-50">
@@ -132,6 +76,8 @@ const Header = () => {
             >
               {btnNameReact}
             </button>
+
+            {/* <li className="font-bold px-4">{loggedInUser}</li> */}
           </ul>
         </nav>
       </div>
