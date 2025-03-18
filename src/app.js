@@ -7,6 +7,10 @@ import Error from "./components/Error";
 import ResMenu from "./components/ResMenu";
 import Shimmer from "./components/Shimmer";
 import ContactShimmer from "./components/ContactShimmer";
+import { Provider } from "react-redux";
+import appStore from "./util/appStore";
+import Cart from "./components/Cart";
+
 // import { useState } from "react";
 
 // lazy loading
@@ -18,12 +22,14 @@ const Applayout = () => {
   // auth
   // const [userInfo, setUserInfo] = useState();
   return (
-    <div className="app">
-      <Header />
+    <Provider store={appStore}>
+      <div className="App">
+        <Header />
 
-      <Outlet />
-      {/* // footer */}
-    </div>
+        <Outlet />
+        {/* // footer */}
+      </div>
+    </Provider>
   );
 };
 
@@ -63,6 +69,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurants/:resId",
         element: <ResMenu />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     errorElement: <Error />,

@@ -1,7 +1,16 @@
+import { useDispatch } from "react-redux";
+import { addItem } from "../util/cartSlice";
 import { CDN_URL } from "../util/constants";
 
 const ResCategory = ({ category, isOpen, onToggle }) => {
   if (!category) return null;
+
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    // dispatch an action
+    dispatch(addItem(item));
+  };
 
   return (
     <div className="border border-gray-200 rounded-lg overflow-hidden">
@@ -68,7 +77,10 @@ const ResCategory = ({ category, isOpen, onToggle }) => {
                         className="h-full w-full object-cover"
                       />
                     </div>
-                    <button className="absolute bottom-2 right-2 bg-white text-green-600 p-1 rounded shadow-md text-xs font-medium border border-gray-200">
+                    <button
+                      className="absolute bottom-2 right-2 bg-white text-green-600 p-1 rounded shadow-md text-xs font-medium border border-gray-200"
+                      onClick={() => handleAddItem(item)}
+                    >
                       ADD
                     </button>
                   </div>
