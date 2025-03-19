@@ -2,7 +2,6 @@ import { CDN_URL } from "../util/constants";
 
 const ResCard = ({ resData, showDiscountBanner = false }) => {
   const discountInfo = resData?.info?.aggregatedDiscountInfoV3;
-
   return (
     <div className="w-full h-full overflow-hidden bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
       <div className="res-card">

@@ -1,4 +1,4 @@
-import piggyImage from "/src/util/piggy.png";
+import piggyImage from "../util/piggy.png";
 import { useState, useContext } from "react";
 import { Link } from "react-router";
 import useOnlineStatus from "../util/useOnlineStatus";
