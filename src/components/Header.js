@@ -1,12 +1,11 @@
 import piggyImage from "../util/namastefood.png";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router";
 import useOnlineStatus from "../util/useOnlineStatus";
 import UserContext from "../util/UserContext";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const [btnNameReact, setbtnNameReact] = useState("Login");
   const onlineStatus = useOnlineStatus();
   const { loggedInUser } = useContext(UserContext);
   console.log(loggedInUser);
@@ -87,28 +86,6 @@ const Header = () => {
                 </span>
               </Link>
             </li>
-
-            <button
-              className={`ml-2 px-5 py-2 rounded-md font-medium text-gray-200 transition-all duration-200 relative overflow-hidden ${
-                btnNameReact === "Login"
-                  ? "border border-indigo-500/30"
-                  : "border border-red-500/30"
-              }`}
-              onClick={() => {
-                btnNameReact === "Login"
-                  ? setbtnNameReact("Logout")
-                  : setbtnNameReact("Login");
-              }}
-            >
-              <span className="relative z-10 hover:text-white transition-colors duration-200">
-                {btnNameReact}
-              </span>
-              <span
-                className={`absolute inset-0 opacity-0 hover:opacity-20 transition-opacity duration-300 ${
-                  btnNameReact === "Login" ? "bg-indigo-500" : "bg-red-500"
-                }`}
-              ></span>
-            </button>
           </ul>
         </nav>
       </div>
