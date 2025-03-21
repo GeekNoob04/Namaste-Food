@@ -1,3 +1,5 @@
+Deployed: https://namastepiggy.vercel.app/ 
+
 # Namaste React 🚀
 
 
