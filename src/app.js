@@ -11,8 +11,6 @@ import { Provider } from "react-redux";
 import appStore from "./util/appStore";
 import Cart from "./components/Cart";
 
-// import { useState } from "react";
-
 // lazy loading
 const Grocery = lazy(() => import("./components/Grocery"));
 const About = lazy(() => import("./components/About"));
@@ -27,7 +25,6 @@ const Applayout = () => {
         <Header />
 
         <Outlet />
-        {/* // footer */}
       </div>
     </Provider>
   );

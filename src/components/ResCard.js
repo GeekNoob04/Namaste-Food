@@ -6,7 +6,6 @@ const ResCard = ({ resData, showDiscountBanner = false }) => {
     <div className="w-full h-full overflow-hidden bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
       <div className="res-card">
         <div className="relative">
-          {/* Restaurant image */}
           <img
             className="w-full h-48 object-cover"
             src={
@@ -17,7 +16,6 @@ const ResCard = ({ resData, showDiscountBanner = false }) => {
             alt={resData?.info?.name || "Restaurant image"}
           />
 
-          {/* Discount banner at the bottom of the image */}
           {showDiscountBanner && discountInfo && (
             <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-2 text-center">
               <span className="font-semibold">{discountInfo.header}</span>
@@ -25,7 +23,6 @@ const ResCard = ({ resData, showDiscountBanner = false }) => {
             </div>
           )}
 
-          {/* Rating badge - positioned above the discount banner */}
           <div className="absolute bottom-10 left-0 p-2">
             <span className="inline-flex items-center px-2 py-1 rounded-lg bg-white text-gray-800 text-sm font-medium">
               <svg
@@ -105,7 +102,6 @@ const ResCard = ({ resData, showDiscountBanner = false }) => {
   );
 };
 
-// Higher order component for discount info
 export const withDiscountInfo = (ResCard) => {
   return (props) => {
     return <ResCard {...props} showDiscountBanner={true} />;

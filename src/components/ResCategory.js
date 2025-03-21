@@ -8,7 +8,6 @@ const ResCategory = ({ category, isOpen, onToggle }) => {
   const dispatch = useDispatch();
 
   const handleAddItem = (item) => {
-    // dispatch an action
     dispatch(addItem(item));
   };
 

@@ -1,19 +1,17 @@
-import { useParams } from "react-router"; // Fix this import
+import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import useResMenu from "../util/useResMenu";
 import { CDN_URL } from "../util/constants";
 import ResMenuShimmer from "./ResMenuShimmer";
 import ResCategory from "./ResCategory";
-import { useDispatch } from "react-redux"; // Add this import
-import { addItem } from "../util/cartSlice"; // Add this import
-
+import { useDispatch } from "react-redux";
+import { addItem } from "../util/cartSlice";
 const ResMenu = () => {
   const { resId } = useParams();
   const resInfo = useResMenu(resId);
   const [openCategoryId, setOpenCategoryId] = useState(null);
-  const dispatch = useDispatch(); // Add this
+  const dispatch = useDispatch();
 
-  // Add this function to handle adding items to cart
   const handleAddItem = (item) => {
     dispatch(addItem(item));
   };
@@ -140,7 +138,7 @@ const ResMenu = () => {
                         </div>
                         <button
                           className="absolute bottom-2 right-2 bg-white text-green-600 p-1 rounded shadow-md text-xs font-medium border border-gray-200"
-                          onClick={() => handleAddItem(item)} // Add onClick handler
+                          onClick={() => handleAddItem(item)}
                         >
                           ADD
                         </button>
