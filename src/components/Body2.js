@@ -136,6 +136,10 @@ const Body2 = () => {
             Could not load restaurants
           </h1>
           <p className="mt-4 text-center text-sm text-gray-600">{error}</p>
+          <p className="mt-2 text-center text-sm text-red-500">
+            This API requires a CORS browser extension. Please install and
+            activate a CORS extension to use this website.
+          </p>
           <button
             onClick={fetchData}
             className="mt-6 w-full rounded-lg bg-green-500 py-3 text-white shadow-md transition hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2"
@@ -266,7 +270,6 @@ const Body2 = () => {
           </div>
         </div>
 
-        {/* Results section with count display */}
         <div className="mb-6 flex items-center justify-between">
           <h2 className="text-xl font-semibold text-gray-800">
             {filteredRes.length > 0
@@ -280,7 +283,6 @@ const Body2 = () => {
           </div>
         </div>
 
-        {/* Restaurant cards grid */}
         {filteredRes.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredRes.map((restaurant) => (
